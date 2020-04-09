@@ -129,7 +129,7 @@ function tellPlaceStory()
 };
 
 
-var closestDist;
+//var closestDist;
 function getClosest(lat, lng, locations)
 {
   closest = locations[0];
@@ -141,6 +141,11 @@ function getClosest(lat, lng, locations)
     {
       closest = locations[i];
       d = dd;
+    }
+
+    if(d < 0.001)
+    {
+      ons.notification.alert('You just reached ' + closest.name);
     }
   }
   return closest;
