@@ -45,7 +45,7 @@ function show_map(position) {
     var lon = position.coords.longitude;
     var latlng = new google.maps.LatLng(lat, lon);
 
-    console.log("map = " + map);
+    // console.log("map = " + map);
 
     if(map) {
         map.panTo(latlng);
@@ -70,6 +70,8 @@ function show_map(position) {
             title:"You are here."
         });
         mapMarker.setMap(map);
+
+        showPointOfInterest(map);
     }
 }
 
@@ -93,6 +95,7 @@ function geo_error(error) {
 function stopWatching() {
     if(watchID) geo.clearWatch(watchID);
     watchID = null;
+    //this is necessary for the map to be displayed again when changing pages
     map = undefined;
 }
 
