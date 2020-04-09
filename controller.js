@@ -22,6 +22,8 @@ var MAXIMUM_AGE = 200; // miliseconds
 var TIMEOUT = 300000;
 var HIGHACCURACY = true;
 
+var closestLocation;
+
 function getLocation()
 {
   if((geo = getGeoLocation())) {
@@ -66,6 +68,8 @@ function show_map(position) {
         mapMarker.setMap(map);
 
         showPointOfInterest(map);
+
+        closestLocation = getClosest(lat, lon, locations);
     }
 }
 
@@ -119,10 +123,29 @@ var locations = [
 function tellPlaceStory()
 {
   var closest = 0;
-  document.getElementById('placeName').innerHTML = locations[closest].name;
+  document.getElementById('placeName').innerHTML = closestLocation.name;
   document.getElementById('disToPlace').innerHTML = 0000;
-  document.getElementById('placeDescription').innerHTML = locations[closest].description;
+  document.getElementById('placeDescription').innerHTML = closestLocation.description;
+};
+
+
+var closestDist;
+function getClosest(lat, lng, locations)
+{
+  closest = locations[0];
+  var d = distance(lat, lng, closest.lat, closest.lng);
+  for(var i = 0 ; i < locations.length ; i++)
+  {
+    var dd = distance(lat, lng, locations[i].lat, locations[i].lng);
+    if(dd < d)
+    {
+      closest = locations[i];
+      d = dd;
+    }
+  }
+  return closest;
 }
+
 
 function showPointOfInterest(map)
 {
