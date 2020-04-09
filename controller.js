@@ -143,7 +143,10 @@ function getClosest(lat, lng, locations)
       d = dd;
     }
 
-    if(d < 0.01)
+    var roundDist = Math.round(d*1000)/1000;
+    document.getElementById('dist-debug').innerHTML = "Distance: " + roundDist;
+
+    if(roundDist < 0.01)
     {
       ons.notification.alert('You just reached ' + closest.name);
     }
