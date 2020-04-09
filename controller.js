@@ -55,6 +55,10 @@ function showPointOfInterest(map)
 {
   var pointsOfInterest = [
     { position: new google.maps.LatLng(53.30058397483567, -2.1007242278630938),
+      type: 'info'},
+    { position: new google.maps.LatLng(53.299155, -2.103137),
+      type: 'info'},
+    { position: new google.maps.LatLng(53.301264, -2.103073),
       type: 'info'}
   ];
 
