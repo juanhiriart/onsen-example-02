@@ -6,6 +6,11 @@
     <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
     <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+
     <script src="controller.js"></script>
     <link rel="stylesheet" href="style.css">
     <title>Map</title>
@@ -20,6 +25,9 @@
             </ons-list-item>
             <ons-list-item onclick="fn.load('story.html')" tappable>
               Story
+            </ons-list-item>
+            <ons-list-item onclick="fn.load('ar-view.html')" tappable>
+              AR View
             </ons-list-item>
             <ons-list-item onclick="fn.load('settings.html')" tappable>
               Settings
@@ -83,6 +91,31 @@
             tellPlaceStory();
           }
         </script>
+
+      </ons-page>
+    </template>
+
+    <template id="ar-view.html">
+      <ons-page>
+        <ons-toolbar>
+          <div class="left">
+            <ons-toolbar-button onclick="fn.open()">
+              <ons-icon icon="md-menu"></ons-icon>
+            </ons-toolbar-button>
+          </div>
+          <div class="center">
+            AR View
+          </div>
+        </ons-toolbar>
+
+        <a-scene
+          vr-mode-ui="enabled: false"
+          embedded
+          arjs="sourceType: webcam; debugUIEnabled: false;"
+        >
+          
+          <a-camera gps-camera rotation-reader> </a-camera>
+        </a-scene>
 
       </ons-page>
     </template>
