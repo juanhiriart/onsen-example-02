@@ -54,12 +54,6 @@ function show_map(position) {
         var myOptions = {
             zoom: 18,
             center: latlng,
-
-            // mapTypeID --
-            // ROADMAP displays the default road map view
-            // SATELLITE displays Google Earth satellite images
-            // HYBRID displays a mixture of normal and satellite views
-            // TERRAIN displays a physical map based on terrain information.
             mapTypeId: google.maps.MapTypeId.ROADMAP
         };
         map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
@@ -106,48 +100,6 @@ function startWatching() {
         timeout: TIMEOUT
     });
 }
-
-/*
-function getLocation()
-{
-  if(navigator.geolocation)
-  {
-    navigator.geolocation.getCurrentPosition(function(position) {
-      var lat = position.coords.latitude;
-      var lon = position.coords.longitude;
-      showMap(lat, lon);
-    });
-  }
-  else
-  {
-    document.write('Your browser does not support Geolocation');
-  }
-}
-*/
-
-/*
-function showMap(lat, lon)
-{
-  var myLatLng = new google.maps.LatLng(lat, lon);
-
-  var mapOptions = {
-  zoom: 15,
-  center: myLatLng,
-  mapTypeId: google.maps.MapTypeId.ROADMAP
-  };
-
-  var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
-
-  var marker = new google.maps.Marker({
-  position: myLatLng,
-  map: map,
-  title: 'Found you!'
-  });
-
-  showPointOfInterest(map);
-
-};
-*/
 
 var locations = [
   {name: "Juan's flat",
