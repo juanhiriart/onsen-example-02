@@ -18,6 +18,9 @@
             <ons-list-item onclick="fn.load('map.html')" tappable>
               Map
             </ons-list-item>
+            <ons-list-item onclick="fn.load('story.html')" tappable>
+              Story
+            </ons-list-item>
             <ons-list-item onclick="fn.load('settings.html')" tappable>
               Settings
             </ons-list-item>
@@ -52,6 +55,36 @@
       </ons-page>
     </template>
 
+    <template id="story.html">
+      <ons-page>
+        <ons-toolbar>
+          <div class="left">
+            <ons-toolbar-button onclick="fn.open()">
+              <ons-icon icon="md-menu"></ons-icon>
+            </ons-toolbar-button>
+          </div>
+          <div class="center">
+            Story
+          </div>
+        </ons-toolbar>
+
+        <div style="text-align: center">
+          <h2 id= "placeName">Place name</h2>
+          <br>
+          <p id= "disToPlace">Distance</p>
+          <p id= "placeDescription"></p>
+        </div>
+
+        <script>
+          ons.getScriptPage().onInit = function()
+          {
+            tellPlaceStory();
+          }
+        </script>
+
+      </ons-page>
+    </template>
+
     <template id="settings.html">
       <ons-page>
         <ons-toolbar>
@@ -66,7 +99,6 @@
         </ons-toolbar>
       </ons-page>
     </template>
-
 
   </body>
 </html>
