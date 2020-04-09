@@ -48,7 +48,9 @@
         <script>
           ons.getScriptPage().onInit = function()
           {
-            getLocation();
+            this.onShow = function() { getLocation();};
+            // this.onHide = function() { console.log("hide"); };
+            // this.onDestroy = function() { console.log("destroy"); };
           }
         </script>
 
