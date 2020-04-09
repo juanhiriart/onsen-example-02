@@ -29,8 +29,6 @@ function getLocation()
   }
 }
 
-//var infoWindow;
-
 function showMap(lat, lon)
 {
   var myLatLng = new google.maps.LatLng(lat, lon);
@@ -49,6 +47,12 @@ function showMap(lat, lon)
   title: 'Found you!'
   });
 
+  showPointOfInterest(map);
+
+};
+
+function showPointOfInterest(map)
+{
   var pointsOfInterest = [
     { position: new google.maps.LatLng(53.30058397483567, -2.1007242278630938),
       type: 'info'}
@@ -61,10 +65,9 @@ function showMap(lat, lon)
     map: map
     });
   };
-
 };
 
-
+//https://developers.google.com/maps/documentation/javascript/custom-markers
 
   /*
   var pos = {lat: 53.30058397483567, lng: -2.1007242278630938};
