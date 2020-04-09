@@ -143,7 +143,7 @@ function getClosest(lat, lng, locations)
       d = dd;
     }
 
-    if(d < 0.001)
+    if(d < 0.01)
     {
       ons.notification.alert('You just reached ' + closest.name);
     }
