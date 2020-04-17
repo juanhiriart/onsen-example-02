@@ -138,6 +138,30 @@
             Settings
           </div>
         </ons-toolbar>
+
+        <p>
+          <p id= "range-text" style= "text-align: center">Detection distance: </p>
+          <ons-row>
+            <ons-col width="40px" style="text-align: center; line-height: 31px;">
+              <!--<ons-icon icon="md-volume-down"></ons-icon>-->
+            </ons-col>
+            <ons-col>
+              <ons-range id= "dist-range"; style="width: 100%;" value="25"></ons-range>
+            </ons-col>
+            <ons-col width="40px" style="text-align: center; line-height: 31px;">
+              <!--<ons-icon icon="md-volume-up"></ons-icon>-->
+          </ons-col>
+        </p>
+
+        <script>
+          // ons.getScriptPage().onInit = function()
+          // {
+            // this.onShow = function() {showSettingsPage();};
+            // this.onHide = function() {};
+            // this.onDestroy = function() {};
+          // }
+        </script>
+
       </ons-page>
     </template>
 

@@ -117,7 +117,11 @@ var locations = [
   {name: "Somewhere in the canal",
   lat: 53.301264,
   lng: -2.103073,
-  description: "This is were Dr Juan walks."}
+  description: "This is were Dr Juan walks."},
+  {name: "MADCC Canoe Club",
+  lat: 53.293020,
+  lng: -2.106697,
+  description: "This is were Dr Juan trains to be world champion."}
 ]
 
 function tellPlaceStory()
@@ -194,7 +198,11 @@ function distance(lat1, lon1, lat2, lon2, unit)
   return dist;
 }
 
-
+function showSettingsPage()
+{
+  var range = document.getElementById('dist-range');
+  console.log(range.value);
+}
 
 
 //https://developers.google.com/maps/documentation/javascript/custom-markers
