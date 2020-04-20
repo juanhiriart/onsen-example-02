@@ -161,6 +161,7 @@ function getClosest(lat, lng, locations)
 
 function showPointOfInterest(map)
 {
+  /*
   for (var i = 0; i < locations.length; i++)
   {
     var marker = new google.maps.Marker({
@@ -169,6 +170,7 @@ function showPointOfInterest(map)
     map: map
     });
   };
+  */
 
   /*
   var pointsOfInterest = [
