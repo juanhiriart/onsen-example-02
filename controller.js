@@ -121,7 +121,7 @@ var locations = [
   {name: "MADCC Canoe Club",
   lat: 53.293020,
   lng: -2.106697,
-  description: "This is were Dr Juan trains to be world champion."}
+  description: "This is were Dr Juan trains to be the next world champion."}
 ]
 
 function tellPlaceStory()
@@ -161,6 +161,16 @@ function getClosest(lat, lng, locations)
 
 function showPointOfInterest(map)
 {
+  for (var i = 0; i < locations.length; i++)
+  {
+    var marker = new google.maps.Marker({
+    position: new google.maps.LatLng(locations[i].lat, locations[i].lng,
+    icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/parking_lot_maps.png',
+    map: map
+    });
+  };
+
+  /*
   var pointsOfInterest = [
     { position: new google.maps.LatLng(53.30058397483567, -2.1007242278630938),
       type: 'info'},
@@ -178,6 +188,7 @@ function showPointOfInterest(map)
     map: map
     });
   };
+  */
 };
 
 //https://www.htmlgoodies.com/beyond/javascript/calculate-the-distance-between-two-points-in-your-web-apps.html
