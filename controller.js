@@ -148,7 +148,7 @@ function getClosest(lat, lng, locations)
     }
 
     var roundDist = Math.round(d*1000)/1000;
-    document.getElementById('dist-debug').innerHTML = "Distance: " + roundDist;
+    document.getElementById('dist-debug').innerHTML = "Closest: " + closest.name + " at " + roundDist + " km.";
 
     if(roundDist < 0.01)
     {
@@ -161,18 +161,20 @@ function getClosest(lat, lng, locations)
 
 function showPointOfInterest(map)
 {
-  /*
+
   for (var i = 0; i < locations.length; i++)
   {
+    var pos = new google.maps.LatLng(locations[i].lat, locations[i].lng);
+
     var marker = new google.maps.Marker({
-    position: new google.maps.LatLng(locations[i].lat, locations[i].lng),
+    position: pos,
     icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/parking_lot_maps.png',
     map: map
     });
   };
-  */
 
 
+/*
   var pointsOfInterest = [
     { position: new google.maps.LatLng(53.30058397483567, -2.1007242278630938),
       type: 'info'},
@@ -192,7 +194,7 @@ function showPointOfInterest(map)
     map: map
     });
   };
-
+*/
 };
 
 //https://www.htmlgoodies.com/beyond/javascript/calculate-the-distance-between-two-points-in-your-web-apps.html
