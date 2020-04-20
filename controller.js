@@ -164,7 +164,7 @@ function showPointOfInterest(map)
   for (var i = 0; i < locations.length; i++)
   {
     var marker = new google.maps.Marker({
-    position: new google.maps.LatLng(locations[i].lat, locations[i].lng,
+    position: new google.maps.LatLng(locations[i].lat, locations[i].lng),
     icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/parking_lot_maps.png',
     map: map
     });
