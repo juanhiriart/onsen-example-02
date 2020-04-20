@@ -172,7 +172,7 @@ function showPointOfInterest(map)
   };
   */
 
-  /*
+
   var pointsOfInterest = [
     { position: new google.maps.LatLng(53.30058397483567, -2.1007242278630938),
       type: 'info'},
@@ -190,7 +190,7 @@ function showPointOfInterest(map)
     map: map
     });
   };
-  */
+  
 };
 
 //https://www.htmlgoodies.com/beyond/javascript/calculate-the-distance-between-two-points-in-your-web-apps.html
